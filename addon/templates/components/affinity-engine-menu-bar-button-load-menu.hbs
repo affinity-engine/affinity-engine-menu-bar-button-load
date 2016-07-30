@@ -1,0 +1,12 @@
+{{#if choices}}
+  {{affinity-engine-menu-bar-menu
+    choices=choices
+    engineId=engineId
+    header="affinity-engine.menu.load.header"
+    options=options
+    onChoice=(action "onChoice")
+    closeModal=(action "closeModal")
+  }}
+
+  <div class="ae-screen" data-test={{hook "affinity_engine_menu_bar_menu_screen"}} {{action "closeModal"}}></div>
+{{/if}}

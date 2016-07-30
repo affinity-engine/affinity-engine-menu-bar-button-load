@@ -1,0 +1,8 @@
+{{#affinity-engine engineId="menu-bar-button-load" config=config isFocused=true as |engine|}}
+  {{affinity-engine-stage engineId=engine.engineId initialScene="load"}}
+
+  {{#affinity-engine-menu-bar engineId=engine.engineId}}
+    {{affinity-engine-menu-bar-button-load engineId=engine.engineId}}
+    {{affinity-engine-menu-bar-button-save engineId=engine.engineId}}
+  {{/affinity-engine-menu-bar}}
+{{/affinity-engine}}
