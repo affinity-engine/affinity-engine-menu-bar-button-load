@@ -48,7 +48,7 @@ export default Component.extend(BusPublisherMixin, ModalMixin, {
         return {
           key: get(save, 'id'),
           object: save,
-          text: get(save, 'fullName')
+          text: get(save, 'fullNameAndDate')
         };
       });
 
