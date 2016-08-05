@@ -27,6 +27,7 @@
     "affinity-engine-stage-direction-data": "git+https://github.com/affinity-engine/affinity-engine-stage-direction-data.git",
     "affinity-engine-stage-direction-text": "git+https://github.com/affinity-engine/affinity-engine-stage-direction-text.git",
     "affinity-engine-styles-bundle": "git+https://github.com/affinity-engine/affinity-engine-styles-bundle.git",
+    "affinity-engine-translator-ember-intl": "git+https://github.com/affinity-engine/affinity-engine-translator-ember-intl.git",
     "babel-eslint": "^6.1.0",
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "^2.0.1",

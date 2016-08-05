@@ -1,0 +1,11 @@
+{
+  "affinity-engine": {
+    "menu-bar": {
+      "buttons": {
+        "load": {
+          "header": "Load Menu"
+        }
+      }
+    }
+  }
+}
