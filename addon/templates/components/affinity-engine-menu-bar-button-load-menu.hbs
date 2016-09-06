@@ -1,12 +1,21 @@
-{{#if choices}}
-  {{affinity-engine-menu-bar-menu
-    choices=choices
-    engineId=engineId
-    header="affinity-engine.menu-bar.buttons.load.header"
-    options=options
-    onChoice=(action "onChoice")
-    closeModal=(action "closeModal")
-  }}
-
-  <div class="ae-screen" data-test={{hook "affinity_engine_menu_bar_menu_screen"}} {{action "closeModal"}}></div>
-{{/if}}
+{{affinity-engine-menu-bar-menu
+  acceptKeys=acceptKeys
+  animationLibrary=animationLibrary
+  cancelKeys=cancelKeys
+  choices=choices
+  columns=menuColumns
+  customClassNames=customClassNames
+  engineId=engineId
+  header=header
+  iconFamily=iconFamily
+  moveDownKeys=moveDownKeys
+  moveLeftKeys=moveLeftKeys
+  moveRightKeys=moveRightKeys
+  moveUpKeys=moveUpKeys
+  transitionIn=transitionIn
+  transitionOut=transitionOut
+  willTransitionOut=willTransitionOut
+  closeModal=(action "closeModal")
+  didTransitionOut=(action "didTransitionOut")
+  onChoice=(action "onChoice")
+}}

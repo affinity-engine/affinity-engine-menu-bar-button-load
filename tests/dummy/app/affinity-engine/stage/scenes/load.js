@@ -1,12 +1,13 @@
 import { Scene } from 'affinity-engine-stage';
+import { task } from 'ember-concurrency';
 
 export default Scene.extend({
   name: 'Load',
 
-  start: async function(script) {
-    await script.data('count').increment();
-    await script.text(await script.data('count'));
+  start: task(function * (script) {
+    yield script.data('count').increment();
+    yield script.text(yield script.data('count'));
 
     script.scene('load');
-  }
+  })
 });

@@ -27,7 +27,7 @@ test('Affinity Engine | stage | Directions | Text', function(assert) {
     return click(hook('affinity_engine_menu_bar_load'));
   }).then(() => {
     assert.equal($hook('affinity_engine_menu_bar_load_menu').length, 1, 'menu opened');
-    assert.equal($hook('ember_flex_menu_option').length, 1, 'autosave option available');
+    assert.equal($hook('ember_flex_menu_option').length, 2, 'autosave option available');
 
     return click($hook('affinity_engine_menu_bar_menu_screen').get(0));
   }).then(() => {
