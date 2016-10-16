@@ -12,6 +12,8 @@ const {
   set
 } = Ember;
 
+const { run: { later } } = Ember;
+
 const configurationTiers = [
   'config.attrs.component.menuBar.button.load',
   'config.attrs.component.menuBar.menu',
@@ -23,7 +25,7 @@ export default Component.extend(BusPublisherMixin, ModalMixin, {
   layout,
   hook: 'affinity_engine_menu_bar_load_menu',
 
-  saveStateManager: registrant('affinity-engine/save-state-manager'),
+  dataManager: registrant('affinity-engine/data-manager'),
   config: multiton('affinity-engine/config', 'engineId'),
 
   acceptKeys: configurable(configurationTiers, 'keys.accept'),
@@ -43,7 +45,7 @@ export default Component.extend(BusPublisherMixin, ModalMixin, {
   init(...args) {
     this._super(...args);
 
-    get(this, 'saveStateManager.saves').then((saves) => {
+    get(this, 'dataManager.saves').then((saves) => {
       const choices = saves.sortBy('updated').reverseObjects().map((save) => {
         return {
           key: get(save, 'id'),
@@ -69,7 +71,7 @@ export default Component.extend(BusPublisherMixin, ModalMixin, {
         const sceneId = get(save, 'activeState.sceneId');
         const options = { autosave: false };
 
-        this.publish(`ae:${engineId}:main:shouldLoadScene`, save, sceneId, options);
+        later(() => this.publish(`ae:${engineId}:main:shouldLoadScene`, save, sceneId, options), 10);
       }
 
       set(this, 'willTransitionOut', true);

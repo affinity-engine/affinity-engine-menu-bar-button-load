@@ -22,7 +22,7 @@
     "affinity-engine-animator-velocity": "git+https://github.com/affinity-engine/affinity-engine-animator-velocity.git",
     "affinity-engine-menu-bar": "git+https://github.com/affinity-engine/affinity-engine-menu-bar.git",
     "affinity-engine-menu-bar-button-save": "git+https://github.com/affinity-engine/affinity-engine-menu-bar-button-save.git",
-    "affinity-engine-rewindable-save-adapter": "git+https://github.com/affinity-engine/affinity-engine-rewindable-save-adapter.git",
+    "affinity-engine-data-manager-rewindable-lokijs": "git+https://github.com/affinity-engine/affinity-engine-data-manager-rewindable-lokijs.git",
     "affinity-engine-stage": "git+https://github.com/affinity-engine/affinity-engine-stage.git",
     "affinity-engine-stage-direction-data": "git+https://github.com/affinity-engine/affinity-engine-stage-direction-data.git",
     "affinity-engine-stage-direction-text": "git+https://github.com/affinity-engine/affinity-engine-stage-direction-text.git",
