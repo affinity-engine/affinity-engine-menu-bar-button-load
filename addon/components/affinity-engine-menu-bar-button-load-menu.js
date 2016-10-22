@@ -2,7 +2,6 @@ import Ember from 'ember';
 import layout from '../templates/components/affinity-engine-menu-bar-button-load-menu';
 import { classNamesConfigurable, configurable, registrant } from 'affinity-engine';
 import { ModalMixin } from 'affinity-engine-menu-bar';
-import { BusPublisherMixin } from 'ember-message-bus';
 import multiton from 'ember-multiton-service';
 
 const {
@@ -21,12 +20,13 @@ const configurationTiers = [
   'config.attrs'
 ];
 
-export default Component.extend(BusPublisherMixin, ModalMixin, {
+export default Component.extend(ModalMixin, {
   layout,
   hook: 'affinity_engine_menu_bar_load_menu',
-
-  dataManager: registrant('affinity-engine/data-manager'),
+  
   config: multiton('affinity-engine/config', 'engineId'),
+  eBus: multiton('message-bus', 'engineId'),
+  dataManager: registrant('affinity-engine/data-manager'),
 
   acceptKeys: configurable(configurationTiers, 'keys.accept'),
   animationLibrary: configurable(configurationTiers, 'animationLibrary'),
@@ -67,11 +67,11 @@ export default Component.extend(BusPublisherMixin, ModalMixin, {
       const save = get(choice, 'object');
 
       if (isPresent(save)) {
-        const engineId = get(this, 'engineId');
+        const eBus = get(this, 'eBus');
         const sceneId = get(save, 'activeState.sceneId');
         const options = { autosave: false };
 
-        later(() => this.publish(`ae:${engineId}:main:shouldLoadScene`, save, sceneId, options), 10);
+        later(() => eBus.publish('shouldLoadScene', save, sceneId, options), 10);
       }
 
       set(this, 'willTransitionOut', true);
