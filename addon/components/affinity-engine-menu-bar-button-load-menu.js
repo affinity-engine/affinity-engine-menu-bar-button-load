@@ -17,13 +17,13 @@ const configurationTiers = [
   'config.attrs.component.menuBar.button.load',
   'config.attrs.component.menuBar.menu',
   'config.attrs.component.menuBar',
-  'config.attrs'
+  'config.attrs.global'
 ];
 
 export default Component.extend(ModalMixin, {
   layout,
   hook: 'affinity_engine_menu_bar_load_menu',
-  
+
   config: multiton('affinity-engine/config', 'engineId'),
   eBus: multiton('message-bus', 'engineId'),
   dataManager: registrant('affinity-engine/data-manager'),

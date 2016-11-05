@@ -15,7 +15,7 @@ moduleForComponent('affinity-engine-menu-bar-button-load', 'Integration | Compon
 const configurationTiers = [
   'config.attrs.component.menuBar.button.load',
   'config.attrs.component.menuBar',
-  'config.attrs'
+  'config.attrs.global'
 ];
 
 configurationTiers.forEach((priority) => {
