@@ -17,6 +17,8 @@ moduleForAcceptance('Acceptance | menu bar/load', {
 test('Affinity Engine | stage | Directions | Text', function(assert) {
   assert.expect(10);
 
+  const done = assert.async();
+
   visit('/').then(() => {
     assert.equal($hook('affinity_engine_stage_direction_text').text().trim(), '1', 'text is correct');
 
@@ -57,5 +59,7 @@ test('Affinity Engine | stage | Directions | Text', function(assert) {
   }).then(() => {
     assert.equal($hook('affinity_engine_menu_bar_load_menu').length, 0, 'menu is closed');
     assert.equal($hook('affinity_engine_stage_direction_text').text().trim(), '3', 'text is correct');
+
+    done();
   });
 });
