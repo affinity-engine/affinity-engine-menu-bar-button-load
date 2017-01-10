@@ -68,7 +68,7 @@ export default Component.extend(ModalMixin, {
 
       if (isPresent(save)) {
         const eBus = get(this, 'eBus');
-        const sceneId = get(save, 'activeState.sceneId');
+        const sceneId = get(save, 'lastState.sceneId');
         const options = { autosave: false };
 
         later(() => eBus.publish('shouldLoadScene', save, sceneId, options), 10);

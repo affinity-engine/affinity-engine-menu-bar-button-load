@@ -14,7 +14,7 @@ moduleForAcceptance('Acceptance | menu bar/load', {
   }
 });
 
-test('Affinity Engine | stage | Directions | Text', function(assert) {
+test('Affinity Engine | menu bar | buttons | load', function(assert) {
   assert.expect(10);
 
   const done = assert.async();
