@@ -3,4 +3,4 @@
 
 # affinity-engine-menu-bar-button-load
 
-You'll find the interactive guides [here](http://www.affinityengine.org/components/menu-bar/buttons/load).
+You'll find the interactive guides [here](http://www.affinityengine.org/#/components/menu-bar/buttons/load).
