@@ -1,10 +1,15 @@
 export default {
+  priority: 2,
   component: {
     menuBar: {
       button: {
         load: {
-          header: 'affinity-engine.menu-bar.buttons.load.header',
-          icon: 'download'
+          attrs: {
+            header: 'affinity-engine.menu-bar.buttons.load.header',
+            icon: {
+              type: 'download'
+            }
+          }
         }
       }
     }

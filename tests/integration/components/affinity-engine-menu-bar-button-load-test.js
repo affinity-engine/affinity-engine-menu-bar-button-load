@@ -13,16 +13,16 @@ moduleForComponent('affinity-engine-menu-bar-button-load', 'Integration | Compon
 });
 
 const configurationTiers = [
-  'config.attrs.component.menuBar.button.load',
-  'config.attrs.component.menuBar',
-  'config.attrs.global'
+  'config.attrs.component.menuBar.button.load.attrs',
+  'config.attrs.component.menuBar.attrs',
+  'config.attrs.every.attrs'
 ];
 
 configurationTiers.forEach((priority) => {
   test(`icon and iconFamily are assigned by priority ${priority}`, function(assert) {
     assert.expect(1);
 
-    const stub = deepStub(priority, { iconFamily: 'fa-icon', icon: 'cloud-upload' });
+    const stub = deepStub(priority, { iconFamily: 'affinity-engine-plugin-icon-font-awesome', icon: { type: 'cloud-upload' } });
 
     setProperties(this, getProperties(stub, 'config'));
 

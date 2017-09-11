@@ -4,15 +4,12 @@ import config from '../../config/environment';
 import keyboardRegisterTestHelpers from './ember-keyboard/register-test-helpers';
 
 export default function startApp(attrs) {
-  let application;
+  let attributes = Ember.merge({}, config.APP);
+  attributes = Ember.merge(attributes, attrs); // use defaults, but you can override;
 
-  // use defaults, but you can override;
-  let attributes = Ember.assign({}, config.APP, attrs);
-
-  Ember.run(() => {
-    application = Application.create(attributes);
+  return Ember.run(() => {
+    let application = Application.create(attributes);
     keyboardRegisterTestHelpers();
-
     Ember.Test.registerAsyncHelper('delay', function(app, duration = 0) {
       return new Ember.RSVP.Promise((resolve) => {
         Ember.run.later(() => {
@@ -23,7 +20,6 @@ export default function startApp(attrs) {
 
     application.setupForTesting();
     application.injectTestHelpers();
+    return application;
   });
-
-  return application;
 }
