@@ -17,7 +17,7 @@ const configurationTiers = [
   'component.menuBar.button.load',
   'component.menuBar.menu',
   'component.menuBar',
-  'children'
+  'all'
 ];
 
 export default Component.extend(ModalMixin, {
