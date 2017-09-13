@@ -1,6 +1,6 @@
 {
   "name": "affinity-engine-menu-bar-button-load",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A load menu for the Affinity Engine menu-bar",
   "keywords": [
     "ember-addon",
